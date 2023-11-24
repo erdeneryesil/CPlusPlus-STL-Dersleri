@@ -1,0 +1,25 @@
+--------------------------------------------------
+
+g++-8 GÜNCELLEME
+
+g++ --version  
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test			
+sudo apt-get update
+sudo apt-get install gcc-8 g++-8					
+g++ --version								
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 20 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+g++ --version	
+
+--------------------------------------------------		
+
+TERMINALDEN DERLEME IŞLEMLERI
+
+g++ -std=c++17 main.cpp
+./a.out
+
+ya da
+
+g++ -std=c++17 main.cpp -o ilkProgram
+./ilkProgram	
+
+--------------------------------------------------				
