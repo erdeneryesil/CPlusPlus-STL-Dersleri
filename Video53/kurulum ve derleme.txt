@@ -1,0 +1,28 @@
+--------------------------------------------------
+
+Derleyici versiyonunu kontrol etmek için:
+g++ --version
+
+--------------------------------------------------
+
+g++-9 ve gcc-9 kurmak için:
+
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-9 g++-9								
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 20 --slave /usr/bin/g++ g++ /usr/bin/g++-9
+
+--------------------------------------------------
+
+libtbb-dev paket kurulumunu gerçekleştirebilmek için:
+
+sudo apt update
+sudo apt install libtbb-dev
+
+--------------------------------------------------
+
+execution kütüphanesini içeren uygulamaları derleyebilmek için:
+
+g++ -std=c++17 main.cpp -o program -ltbb 
+
+--------------------------------------------------

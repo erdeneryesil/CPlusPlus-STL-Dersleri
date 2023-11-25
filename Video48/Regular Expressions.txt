@@ -1,0 +1,651 @@
+--------------------------------------------------
+
+"."
+Sayfa sonu ya da paragraf sonu dışındaki herhangi bir tek karakter ile eşleştirilebilir.
+
+Regular expression	:
+.
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+Regular expression	:
+m.sal
+
+Test metni		:
+Bu bir masal.
+Sana bir misal vereyim.
+müsal
+mosal
+mısal
+
+--------------------------------------------------
+
+"$"
+Kendinden önce yazılan ifade paragraf sonundaysa eşleşir. İfadenin sonunu belirtir. Boşluklar ve paragraf başındaki özel nesneler dikkate alınmaz.
+
+Regular expression	:
+$
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>$
+
+--------------------------------------------------
+
+Regular expression	:
+güzel$
+
+Test metni		:
+Bugün hava güzel, sen güzel, ben güzel, ama o daha güzel
+
+--------------------------------------------------
+
+"^"
+Eğer terim sadece paragraf başında ise aranılan ifadeyi bulur.
+
+Regular expression	:
+^
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>$
+
+--------------------------------------------------
+
+Regular expression	:
+^Burası
+
+Test metni		:
+Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. Burası birinci paragraf. 
+
+Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. Burası ikinci paragraf. 
+
+--------------------------------------------------
+
+"*"
+Önünde bulunduğu karakterin 0 veya tekrarlarıyla eşleşir. 
+
+Regular expression	:
+sa*t
+
+Test metni		:
+st sat saat saaat
+
+--------------------------------------------------
+
+"[c1c2c3]"
+Köşeli parantezler içine girilen bütün karakterlerle eşleşir.
+
+Regular expression	:
+[tMÇ7?]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>$
+
+--------------------------------------------------
+
+Regular expression	:
+k[aıöu]z
+
+Test metni		:
+Aldım kazı.
+Gördüm kızı
+Ateşin közü.
+kuz
+kez
+küz
+
+--------------------------------------------------
+
+"[^c1c2c3]"
+
+Köşeli parantezler içine girilen karakterler dışındaki karakterler ile eşleşir.
+
+Regular expression	:
+[^tMÇ7?]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>$
+
+--------------------------------------------------
+
+Regular expression	:
+k[^aıöu]z
+
+Test metni		:
+Aldım kazı.
+Gördüm kızı
+Ateşin közü.
+kuz
+kez
+küz
+
+--------------------------------------------------
+
+"[c1-c2]"
+Tire işareti ile bir aralık belirlenir ve bu aralığa göre eşleşme yapılır.
+
+Regular expression	:
+[0-9]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+Regular expression	:
+[A-Za-z0-9]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"[^c1-c2]"
+Belirtilen aralık harici bütün karakterlere eşleşir. 
+
+Regular expression	:
+[^A-Za-z0-9]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"()"
+regex ifadesini gruplandırmaya yarar. Ayrıca gruplandırılmış ifadelerine denk gelen kalıpları saklar ve en fazla 9 kalıp saklayabilir.
+
+Regular expression	:
+[(A-Z)(a-z)(0-9)]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+Regular expression	:
+k(e)(l)\2\1
+
+Test metni		:
+kel
+kell
+el
+elle
+ellek
+kelek
+kelle
+
+--------------------------------------------------
+
+"|"
+Veya anlamındadır, belirtilen iki veya daha fazla ifadeyle ayrı ayrı eşleşebilir. 
+
+Regular expression	:
+k|T|r
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+Regular expression	:
+ali|veli
+
+Test metni		:
+ahmet mehmet ayşe oya ali mustafa veli
+
+--------------------------------------------------
+
+"+"
+Kendinden önce gelen ifadenin bir veya daha fazla kullanımına eşleşir.
+
+Regular expression	:
+a+
+
+Test metni		:
+abc aabc aaabc aaaabc
+
+--------------------------------------------------
+
+Regular expression	:
+sa+t
+
+Test metni		:
+st sat saat saaat
+
+--------------------------------------------------
+
+"?"
+Kendinden önce gelen ifadenin 0 veya 1 tekrarıyla eşleşir.
+
+Regular expression	:
+a?b
+
+Test metni		:
+b ab
+
+--------------------------------------------------
+
+Regular expression	:
+kaçak?
+
+Test metni		:
+kaç
+kaça
+kaçak
+
+--------------------------------------------------
+
+"{}"
+Kendinden önceki ifadenin belirlenen sayıda tekrarıyla eşleşir.
+
+Regular expression	:
+ab{3}c
+
+Test metni		:
+abc abbc abbbc abbbbc abbbbbbc abababc
+
+--------------------------------------------------
+
+Regular expression	:
+(ab){3}c
+
+Test metni		:
+abc abbc abbbc abbbbc abbbbbbc abababc
+
+--------------------------------------------------
+
+Regular expression	:
+sa{2}t
+
+Test metni		:
+st sat saat saaat
+
+--------------------------------------------------
+
+"{i,j}"
+Belirlenmiş sayıda tekrar anlamındadır tek farkı "i" ile "j" aralığındaki bütün tekrarlara eşlenir.
+
+Regular expression	:
+ab{2,4}c
+
+Test metni		:
+abc abbc abbbc abbbbc abbbbbbc ababc abababc ababababc
+
+--------------------------------------------------
+
+Regular expression	:
+(ab){2,4}c
+
+Test metni		:
+abc abbc abbbc abbbbc abbbbbbc ababc abababc ababababc
+
+--------------------------------------------------
+
+Regular expression	:
+10{3,5}
+
+Test metni		:
+1
+10
+100
+1000
+10000
+1000000
+10000000
+
+--------------------------------------------------
+
+"\t" 
+tab karakteri ile eşleşir
+
+Regular expression	:
+\t
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\d"
+[0-9] herhangi bir rakam ile eşleşir
+
+Regular expression	:
+\d
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\D"
+[^0-9] rakam olmayan herhangi bir ifade ile eşleşir
+
+Regular expression	:
+\D
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\w"
+[a-zA-Z0-9_] büyük-küçük harfler, rakamlar ve alt tire (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+\w
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\W"
+[^a-zA-Z0-9_] büyük-küçük harfler, rakamlar ve alt tire haricindeki karakterler ile eşleşir
+
+Regular expression	:
+\W
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\s"
+[ \t\n\r\f] - Herhangi bir boşluk karakteri ile eşleşir
+
+Regular expression	:
+\s
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+"\S"
+[^\t\n\r\f]- Boşluk karakteri olmayan karakterler ile eşleşir
+
+Regular expression	:
+\S
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:alnum:]]
+Alfanumerik karakterler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:alnum:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:alpha:]]
+Alfabetik karakterler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:alpha:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:blank:]]
+space ve tab karakterleri ile eşleşir
+
+Regular expression	:
+[[:blank:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:cntrl:]]
+Kontrol karakterleri yani ekranda görünmeyen karakterleri ile eşleşir. Alt satıra geçme karakteri olan "\n" ve "tab" karakteri örnek olarak verilebilir.
+
+Regular expression	:
+[[:cntrl:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:digit:]]
+Rakamlar ile eşleşir
+
+Regular expression	:
+[[:digit:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:graph:]]
+Grafiksel olarak ifade edilebilen karakterler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:graph:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:lower:]]
+Küçük harfler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:lower:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:print:]]
+Yazdırılabilir karakterler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:print:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:punct:]]
+Noktalama karakterleri ile eşleşir
+
+Regular expression	:
+[[:punct:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:space:]]
+space ve tab karakteri ile eşleşir
+
+Regular expression	:
+[[:space:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:upper:]]
+Büyük harfler (Türkçe karakterler hariç) ile eşleşir
+
+Regular expression	:
+[[:upper:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
+--------------------------------------------------
+
+[[:xdigit:]]
+Hexadecimal sayıları oluşturulan karakterler ([0-9a-fA-F]) ile eşleşir
+
+Regular expression	:
+[[:xdigit:]]
+
+Test metni		:
+abcdefghijklmnopqrstuvwxyz
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+çÇğĞüÜÖöıİ
+ 	 	 	 	 	 	 	
+0123456789
++-*/_?!#'%&<>
+
