@@ -1,0 +1,49 @@
+						GENERATOR ENGINES
+						
+		PSEUDO-RANDOM NUMBER ENGINES 
+	default_random_engine
+	minstd_rand
+	minstd_rand0
+	mt19937
+	mt19937_64
+	ranlux24_base
+	ranlux48_base
+	ranlux24
+	ranlux48
+	knuth_b
+
+		RANDOM NUMBER GENERATOR
+	random_device
+
+
+
+						DISTRIBUTIONS
+		UNIFORM
+	uniform_int_distribution
+	uniform_real_distribution
+
+		RELATED TO BERNOULLI (YES/NO)
+	bernoulli_distribution
+	binomial_distribution
+	geometric_distribution
+	negative_binomial_distribution
+
+		RATE-BASED DISTRIBUTIONS
+	poisson_distribution
+	exponential_distribution
+	gamma_distribution
+	weibull_distribution
+	extreme_value_distribution
+
+		RELATED TO NORMAL DISTRIBUTION
+	normal_distribution
+	lognormal_distribution
+	chi_squared_distribution
+	cauchy_distribution
+	fisher_f_distribution
+	student_t_distribution
+
+		PIECEWISE DISTRIBUTIONS
+	discrete_distribution
+	piecewise_constant_distribution
+	piecewise_linear_distribution
